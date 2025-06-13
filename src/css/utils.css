@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+.container {  
+  width: min(100% - 40px, 1080px);
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.easeinout {
+  transition: all 0.25s ease-in-out;
+}
+
+.grid-center {
+  display: grid;
+  place-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--app-font-color);
+}
