@@ -1,4 +1,3 @@
-import
 
 function FilterSide({ onFilter }) {
 

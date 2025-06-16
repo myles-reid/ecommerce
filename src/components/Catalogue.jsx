@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAPI } from '../Context';
-// import ProductCard from './ProductCard';
+import ProductCard from './ProductCard';
 import FilterSide from './FilterSide';
 
 function Catalogue() {
