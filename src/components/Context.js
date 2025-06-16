@@ -13,7 +13,6 @@ function Context({ children }) {
       .then((response) => {
         setData(response.data);
         setLoading(false);
-        console.log(response.data);
       })
       .catch((error) => console.log(error));  
   }, []);
