@@ -5,7 +5,7 @@ function Home() {
   return (
     <main className="container">
       <HeroBanner />
-      <ProductInfo productId={20} /> {/* Replace 1 with the actual product ID you want to display */}
+      <ProductInfo productId={18} /> {/* Replace 1 with the actual product ID you want to display */}
     </main>
   );
 }
