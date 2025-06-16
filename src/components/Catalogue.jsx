@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAPI } from '../Context';
 // import ProductCard from './ProductCard';
-// import FilterSidebar from './FilterSidebar';
+import FilterSide from './FilterSide';
 
 function Catalogue() {
   const { data, loading } = useAPI();
@@ -26,7 +26,7 @@ function Catalogue() {
 
   return (
     <div className="catalogue-container">
-      <FilterSidebar onFilter={handleFilter} />
+      <FilterSide onFilter={handleFilter} />
       <div className="products-grid">
         {filtered.map(product => (
           <ProductCard key={product.id} product={product} />
