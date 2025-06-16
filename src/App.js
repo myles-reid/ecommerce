@@ -1,9 +1,10 @@
-import Api from './components/api';
+import Context from './components/Context';
 
 function App() {
   return (
     <div>
-      <Api></Api>
+      <Context>
+      </Context>
     </div>
   )
 };
