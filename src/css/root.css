@@ -1,12 +1,14 @@
 @charset "utf-8";
 
 :root {
-  --dark-bg: #1a1d28;
-  --light-bg: #f9f9f9;
+  --background: #f3ece7;
+  --text-color: #1b1b1e;
+  --primary-color: #a3b3c2;
+  --secondary-color: #DADCE0;
+  --accent-color: #6AB1A0;
 
-  --box-bg: #0a0a0a;
-  --text-colour: #f9f9f9;
-  --text-colour-dark: #0a0a0a;
+  --Header-font: 'Tomorrow', sans-serif;
+  --Body-font: 'Open Sans', sans-serif;
 
   --box-radius: 6px;
   --box-shadow: 0px 0px 4px rgb(0 0 0 / 40%);
