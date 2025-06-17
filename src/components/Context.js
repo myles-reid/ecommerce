@@ -7,6 +7,11 @@ function Context({ children }) {
   const URL = 'https://fakestoreapi.com/products';
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [cart, setCart] = useState([]);
+
+   const addToCart = (item) => {
+    setCart((prev) => [...prev, item]);
+  };
 
   useEffect(() => {
     axios.get(URL)
@@ -18,7 +23,7 @@ function Context({ children }) {
   }, []);
 
   return (
-    <APIContext.Provider value={{ data, loading }}>
+    <APIContext.Provider value={{ data, loading,cart, addToCart }}>
       {children}
     </APIContext.Provider>
   )
