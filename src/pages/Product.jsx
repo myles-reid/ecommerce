@@ -25,7 +25,7 @@ useEffect(() => {
   return (
     <>
     <ProductInfo product={product} />
-    <SimilarProducts category={product.category} />
+    <SimilarProducts category={product.category} id={product.id}/>
     </>
   );
 }

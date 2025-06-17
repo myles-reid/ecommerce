@@ -19,6 +19,14 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.carousel-image-link {
+  width: 250px;
+  height: 350px;
+  object-fit: contain;
+  background-color: white; 
+  position: absolute;
+}
+
 .carousel-button {
   position: absolute;
   bottom: 20px;

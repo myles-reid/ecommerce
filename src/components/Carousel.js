@@ -44,10 +44,9 @@ export default function Carousel() {
         {images.map((image, index) => (
         <Link
             key={index}
-            className="carousel-image"
+            className="carousel-image-link"
             initial="center"
             to={`/product/${mostPopularProds[index].id}`}
-            style={{ width: '230px', height: 'auto', objectFit: 'cover', position: 'absolute' }}
         >
             <motion.img
                 src={image}
@@ -57,7 +56,6 @@ export default function Carousel() {
                 animate={positions[positionIndexes[index]]}
                 variants={imageVariants}
                 transition={{ duration: 0.5 }}
-                style={{ width: '230px', height: 'auto', objectFit: 'cover', position: 'absolute' }}
                 />
         </Link>
         ))}
