@@ -1,11 +1,11 @@
 import Context from './components/Context';
-import ProductList from './components/ProductList';
+import Home from './pages/Home';
 
 function App() {
   return (
     <div>
       <Context>
-        <ProductList />
+        <Home />
       </Context>
     </div>
   )
