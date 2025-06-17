@@ -13,15 +13,15 @@ function SimilarProducts( { category, id} ) {
     }
   }, [data, category]);
   return (
-    <div className="similar-products">
+    <div className="similar-products container">
       <h2>Similar Products</h2>
       <div className="product-list">
         {similarProducts.map(product => (
-          <div key={product.id} className="product-item">
-            <Link reloadDocument to={`/product/${product.id}`}><img src={product.image} alt={product.title} /></Link>
-            <h3>{product.title}</h3>
-            <p>${product.price.toFixed(2)}</p>
-          </div>
+            <Link reloadDocument to={`/product/${product.id}`} key={product.id}className="product-item">
+              <img src={product.image} alt={product.title} className="product-img" />
+              <h3>{product.title}</h3>
+              <p>${product.price.toFixed(2)}</p>
+            </Link>
         ))}
       </div>
     </div>

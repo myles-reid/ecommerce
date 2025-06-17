@@ -129,7 +129,7 @@
 /***      Item        ***/
 /************************/
 .product-info {
-  height: 500px;
+  height: 550px;
   align-items: center;
   background-color: var(--primary-color);
   justify-content: center;
@@ -141,17 +141,20 @@
 .sidebar {
   width: 50%;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 
   h2 {
     font-family: var(--Header-font);
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
   }
 
 
   .category {
-    margin-top: -30px;
+    margin-top: -20px;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: capitalize;
   }
 }
 
@@ -184,7 +187,8 @@
 }
 
 .description {
-  width: 75%
+  width: 75%;
+  font-size: 14px;
 }
 
 .sizes {
@@ -262,9 +266,6 @@
   }
 }
 
-
-
-
 .product-image {
   display: flex;
   flex-direction: column;
@@ -294,4 +295,55 @@
 .secondary-images img:hover {
   cursor: pointer;
   transform: scale(1.05);
+}
+
+.similar-products {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.product-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--background);
+  border-radius: var(--box-radius);
+  box-shadow: var(--box-shadow);
+  width: calc(25% - 20px);
+  height: 250px;
+  gap: 10px;
+}
+
+.product-item > h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.product-item > p {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.product-item:hover {
+
+  img {
+    transform: scale(1.05);
+  }
+  cursor: pointer;
+}
+
+.product-img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
 }
