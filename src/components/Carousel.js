@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useAPI } from './Context';
+import { Link } from 'react-router-dom';
 import '../css/carousel.css';
 
 export default function Carousel() {
@@ -41,17 +42,24 @@ export default function Carousel() {
     return (
     <div className="carousel-container">
         {images.map((image, index) => (
-        <motion.img
+        <Link
             key={index}
-            src={image}
-            alt={`product-${index}`}
             className="carousel-image"
             initial="center"
-            animate={positions[positionIndexes[index]]}
-            variants={imageVariants}
-            transition={{ duration: 0.5 }}
+            to={`/product/${mostPopularProds[index].id}`}
             style={{ width: '230px', height: 'auto', objectFit: 'cover', position: 'absolute' }}
-        />
+        >
+            <motion.img
+                src={image}
+                alt={`product-${index}`}
+                className="carousel-image"
+                initial="center"
+                animate={positions[positionIndexes[index]]}
+                variants={imageVariants}
+                transition={{ duration: 0.5 }}
+                style={{ width: '230px', height: 'auto', objectFit: 'cover', position: 'absolute' }}
+                />
+        </Link>
         ))}
 
         <button className="carousel-button" onClick={handleNext}>

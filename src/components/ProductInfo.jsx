@@ -2,6 +2,7 @@ import { useAPI } from './Context';
 import Counter from './Counter';
 import { useEffect, useState } from 'react';
 import { FaStar, FaStarHalf, FaRegStar } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 function ProductInfo(props) {
   const stars = [];
@@ -9,15 +10,18 @@ function ProductInfo(props) {
   const { data: products, loading } = useAPI();
   const [product, setProduct] = useState([]);
   const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+  const navigate = useNavigate();
 
-  if (!product) {/* This is where we will re-direct to the 404 page*/ }
-
-  /* We will need to make sure that the props are being passed correctly and that the productId is valid */
-  
   useEffect(() => {
+      if (loading) { return; }
       const foundProduct = products.find(p => p.id === props.productId);
-      setProduct(foundProduct || {});
-  }, [props.productId, products]);
+      if (!foundProduct) {
+        navigate('/*', { replace: true });
+      } else {
+        setProduct(foundProduct);
+      }
+  }, [loading, products, props.productId, navigate]);
+  
 
   const displayRating = product?.rating ? round(product.rating.rate, 0.5) : 0;
 
