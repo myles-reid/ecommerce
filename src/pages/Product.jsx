@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import ProductInfo from '../components/ProductInfo';
 import { useNavigate } from 'react-router-dom';
 import { useAPI } from '../components/Context';
+import SimilarProducts from '../components/SimilarProducts';
 
 function Product() {
 const { productId } = useParams();
@@ -24,6 +25,7 @@ useEffect(() => {
   return (
     <>
     <ProductInfo product={product} />
+    <SimilarProducts category={product.category} />
     </>
   );
 }
