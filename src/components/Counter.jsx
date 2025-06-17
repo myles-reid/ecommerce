@@ -7,9 +7,9 @@ function Counter() {
   
   return (
       <div className="counter">
-        <input type="button" value="-" onClick={() => { setCount(count - 1) }} className="sub" disabled={disabled}/>
-        <input type="text" value={count} readOnly className="sum"/>
-        <input type="button" value="+" onClick={() => { setCount(count + 1) }} className="add"/>
+        <button type="button" onClick={() => { setCount(count - 1) }} className="sub" disabled={disabled}>-</button>
+        <input type="text" value={count} readOnly className="total" name="total"/>
+        <button type="button" onClick={() => { setCount(count + 1) }} className="add">+</button>
       </div>
   );
 }

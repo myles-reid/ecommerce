@@ -8,9 +8,11 @@ function ProductInfo(props) {
   const outline = [];
   const { data: products, loading } = useAPI();
   const [product, setProduct] = useState([]);
+  const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
 
   if (!product) {/* This is where we will re-direct to the 404 page*/ }
-  
+
+  /* We will need to make sure that the props are being passed correctly and that the productId is valid */
   
   useEffect(() => {
       const foundProduct = products.find(p => p.id === props.productId);
@@ -54,10 +56,10 @@ function ProductInfo(props) {
   
 
   return (
-    <section className="flex">
-      <div className="sidebar">
-        <p>{product.category}</p>
+    <section className="flex product-info">
+      <div className="sidebar flex">
         <h2>{product.title}</h2>
+        <p className="category">{product.category}</p>
         <div className="rating flex">
           <div className="stars flex star-overlay">
             {outline.map(star => (
@@ -74,16 +76,32 @@ function ProductInfo(props) {
               ))}
             </div>
           </div>
-          <p className="rating-value">({product.rating?.count})</p>
+          <p className="rating-value">({product.rating?.count} reviews)</p>
         </div>
         <div>
           <p className="price">${product.price}</p>
           <p className="description">{product.description}</p>
         </div>
-        <Counter />
+        <form action="onSubmit" className="flex add-form">
+          <div className="sizes flex">
+            {sizes.map((size, index) => (
+              <>
+                <input type="radio" name="size" id={size} key={index} />
+                <label htmlFor={size} className="size-label">{size}</label>
+              </>
+            ))}
+          </div>
+          <Counter />
+          {/* Add to cart button */}
+        </form>
       </div>
       <div className="product-image">
         <img src={product.image} alt={product.title} />
+        <div className="secondary-images flex">
+          <img src={product.image} alt={product.title} />
+          <img src={product.image} alt={product.title} />
+          <img src={product.image} alt={product.title} />
+        </div>
       </div>
     </section>
   );
