@@ -129,10 +129,10 @@
 /***      Item        ***/
 /************************/
 .product-info {
-  height: 70svh;
+  height: 500px;
   align-items: center;
   background-color: var(--primary-color);
-  justify-content: space-evenly;
+  justify-content: center;
   border-radius: var(--box-radius);
   box-shadow: var(--box-shadow);
 }
@@ -148,6 +148,7 @@
     font-size: 30px;
     font-weight: 600;
   }
+
 
   .category {
     margin-top: -30px;
@@ -180,6 +181,10 @@
 .add-form {
   flex-direction: column;
   gap: 20px;
+}
+
+.description {
+  width: 75%
 }
 
 .sizes {

@@ -4,26 +4,19 @@ import { useEffect, useState } from 'react';
 import { FaStar, FaStarHalf, FaRegStar } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
-function ProductInfo(props) {
+function ProductInfo({ product }) {
   const stars = [];
   const outline = [];
-  const { data: products, loading } = useAPI();
-  const [product, setProduct] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState({});
   const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
   const navigate = useNavigate();
 
   useEffect(() => {
-      if (loading) { return; }
-      const foundProduct = products.find(p => p.id === props.productId);
-      if (!foundProduct) {
-        navigate('/*', { replace: true });
-      } else {
-        setProduct(foundProduct);
-      }
-  }, [loading, products, props.productId, navigate]);
+      setSelectedProduct(product);
+  }, [product]);
   
 
-  const displayRating = product?.rating ? round(product.rating.rate, 0.5) : 0;
+  const displayRating = selectedProduct?.rating ? round(selectedProduct.rating.rate, 0.5) : 0;
 
   function round(value, step) {
     step || (step = 1.0);
@@ -60,10 +53,10 @@ function ProductInfo(props) {
   
 
   return (
-    <section className="flex product-info">
+    <section className="flex product-info container">
       <div className="sidebar flex">
-        <h2>{product.title}</h2>
-        <p className="category">{product.category}</p>
+        <h2>{selectedProduct.title}</h2>
+        <p className="category">{selectedProduct.category}</p>
         <div className="rating flex">
           <div className="stars flex star-overlay">
             {outline.map(star => (
@@ -80,11 +73,11 @@ function ProductInfo(props) {
               ))}
             </div>
           </div>
-          <p className="rating-value">({product.rating?.count} reviews)</p>
+          <p className="rating-value">({selectedProduct.rating?.count} reviews)</p>
         </div>
         <div>
-          <p className="price">${product.price}</p>
-          <p className="description">{product.description}</p>
+          <p className="price">${selectedProduct.price}</p>
+          <p className="description">{selectedProduct.description}</p>
         </div>
         <form action="onSubmit" className="flex add-form">
           <div className="sizes flex">
@@ -100,11 +93,11 @@ function ProductInfo(props) {
         </form>
       </div>
       <div className="product-image">
-        <img src={product.image} alt={product.title} />
+        <img src={selectedProduct.image} alt={selectedProduct.title} />
         <div className="secondary-images flex">
-          <img src={product.image} alt={product.title} />
-          <img src={product.image} alt={product.title} />
-          <img src={product.image} alt={product.title} />
+          <img src={selectedProduct.image} alt={selectedProduct.title} />
+          <img src={selectedProduct.image} alt={selectedProduct.title} />
+          <img src={selectedProduct.image} alt={selectedProduct.title} />
         </div>
       </div>
     </section>
