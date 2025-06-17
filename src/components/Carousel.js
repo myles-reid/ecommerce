@@ -10,7 +10,7 @@ export default function Carousel() {
         .sort((a, b) => b.rating.rate - a.rating.rate)
         .slice(0, 5);
     const [positionIndexes, setPositionIndexes] = useState([]);
-    
+
     useEffect(() => {
     if (mostPopularProds.length > 0) {
         setPositionIndexes(mostPopularProds.map((_, index) => index));
