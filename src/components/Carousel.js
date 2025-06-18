@@ -1,28 +1,32 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAPI } from './Context';
 import { Link } from 'react-router-dom';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import '../css/carousel.css';
+const MAX_PRODS = 5;
 
 export default function Carousel() {
     const data = useAPI().data;
     const mostPopularProds = [...data]
         .sort((a, b) => b.rating.rate - a.rating.rate)
-        .slice(0, 5);
-    const [positionIndexes, setPositionIndexes] = useState([]);
-
-    useEffect(() => {
-    if (mostPopularProds.length > 0) {
-        setPositionIndexes(mostPopularProds.map((_, index) => index));
-    }
-    }, [data]);
-
+        .slice(0, MAX_PRODS);
+    const [positionIndexes, setPositionIndexes] = useState(Array.from({ length: MAX_PRODS }, (_, i) => i));
     const handleNext = () => {
         setPositionIndexes(prev => {
             const [first, ...rest] = prev;
             return [...rest, first];
         });        
     }
+
+    const handlePrev = () => {
+        setPositionIndexes((prev) => {
+        const last = prev[prev.length - 1];
+        const rest = prev.slice(0, -1);
+        return [last, ...rest];
+        });
+    };
+        
     const images = mostPopularProds.map(prod => prod.image);
     const positions = [
         'center',
@@ -40,29 +44,37 @@ export default function Carousel() {
     }
         
     return (
-    <div className="carousel-container">
-        {images.map((image, index) => (
-        <Link
-            key={index}
-            className="carousel-image-link"
-            initial="center"
-            to={`/product/${mostPopularProds[index].id}`}
-        >
-            <motion.img
-                src={image}
-                alt={`product-${index}`}
-                className="carousel-image"
-                initial="center"
-                animate={positions[positionIndexes[index]]}
-                variants={imageVariants}
-                transition={{ duration: 0.5 }}
-                />
-        </Link>
-        ))}
+        <div className="carousel-wrapper">
+            <h3 className="carousel-title">Our Most Popular Products</h3>
 
-        <button className="carousel-button" onClick={handleNext}>
-        Next
-        </button>
-    </div>
+            <div className="carousel-container">
+            <button className="carousel-arrow left" onClick={handlePrev}>
+                <FaChevronLeft />
+            </button>
+
+            {images.length === positionIndexes.length &&
+                images.map((image, index) => (
+                <Link
+                    key={index}
+                    className="carousel-image-link"
+                    to={`/product/${mostPopularProds[index].id}`}
+                >
+                    <motion.img
+                    src={image}
+                    alt={`product-${index}`}
+                    className="carousel-image"
+                    initial="center"
+                    animate={positions[positionIndexes[index]]}
+                    variants={imageVariants}
+                    transition={{ duration: 0.5 }}
+                    />
+                </Link>
+                ))}
+
+            <button className="carousel-arrow right" onClick={handleNext}>
+                <FaChevronRight />
+            </button>
+            </div>
+        </div>
     );
 }
