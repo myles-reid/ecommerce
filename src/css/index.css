@@ -159,7 +159,129 @@
   flex: 2;
   display: flex;
   justify-content: center;
+}
+
+/************************/
+/***      BANNER      ***/
+/************************/
+
+.hero-banner {
+  position:relative;
+  overflow: hidden;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-color);
+  height: 50svh;
+  padding: 20px;
+  gap: 20px;
+  border-radius: var(--box-radius);
+  box-shadow: var(--box-shadow);
   
+  .extra {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .extra:nth-child(1) {
+    height: 150px;
+    width: 150px;
+    top: -40px;
+    left: -40px;
+    background-color: var(--secondary-color);
+  }
+
+  .extra:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    background: var(--accent-color); 
+    bottom: 30px;
+    right: 70px;
+  }
+
+  .extra:nth-child(3) {
+    width: 200px;
+    height: 200px;
+    background: var(--secondary-color);
+    top: 60px;
+    right: 100px;
+  }
+
+  .extra:nth-child(4) {
+    width: 400px;
+    height: 400px;
+    background: var(--accent-color);
+    bottom: -100px;
+    left: -100px;
+  }
+
+  .extra:nth-child(5) {
+    width: 300px;
+    height: 300px;
+    background: var(--secondary-color);
+    top: -100px;
+    right: 200px;
+  }
+
+  .banner-text, .banner-image {
+    z-index: 2;
+  }
+
+  .banner-header {
+    font-family: var(--Header-font);
+  }
+
+
+  h2 {
+    font-size:90px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-top: -30px;
+
+    span {
+      margin-top: -20px;
+      font-size: 20px;
+      display: block;
+      justify-self: center;
+    }
+  }
+
+  .banner-subtext {
+    font-family: var(--body-font);
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .disclaimer {
+    font-size: 12px;
+    font-weight: 200;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: var(--accent-color);
+    color: var(--background);
+    border: 1px solid var(--secondary-color);
+    box-shadow: var(--box-shadow);
+    transition: all 0.2s ease-in-out;
+    }
+
+  button:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    cursor: pointer;
+  }
+}
+
+.banner-image{
+  align-self: center;
+  height: calc(100% + 40px);
+  width: auto;
+}
 /************************/
 /***      Item        ***/
 /************************/
@@ -191,6 +313,7 @@
     font-weight: 300;
     text-transform: capitalize;
   }
+}
 
 .product-img {
   height: 100px;
@@ -315,4 +438,3 @@ body:has(.store-footer) .store-footer {
   margin-top: 2rem;
   color: var(--text-color);
 }
-
