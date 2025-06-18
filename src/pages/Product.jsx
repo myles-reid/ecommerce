@@ -22,6 +22,10 @@ useEffect(() => {
       }
   }, [loading, products, productId, navigate]);
 
+  useEffect(()=> {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <section className="product-page">

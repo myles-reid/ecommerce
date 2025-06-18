@@ -1,11 +1,11 @@
 import Header from './Header';
 import HeaderTop from './HeaderTop';
 
-function FullHeader() {
+function FullHeader({onClick}) {
   return (
     <header>
       <HeaderTop/>
-      <Header/>
+      <Header onClick={onClick}/>
     </header>
   );
 }

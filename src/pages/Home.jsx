@@ -1,21 +1,25 @@
 import HeroBanner from "../components/HeroBanner";
 import Carousel from "../components/Carousel";
 import Catalogue from "../components/Catalogue";
-import { useRef } from "react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-function Home() {
-const catalogueRef = useRef(null);
+function Home({ ref, onClick }) {
+  const location = useLocation();
 
-const scrollToCatalogue = () => {
-  catalogueRef.current.scrollIntoView({ behavior: 'smooth' });
-}
+  useEffect(() => {
+    if (location.state && location.state.scrollToCatalogue && ref && ref.current) {
+      onClick();
+      window.history.replaceState({}, document.title);
+    }
+  }, [location, ref])
 
   return (
     <>
     <main className="container">
-      <HeroBanner onClick={scrollToCatalogue}/>
+      <HeroBanner onClick={onClick}/>
       <Carousel />
-      <Catalogue ref={catalogueRef}/>
+      <Catalogue ref={ref}/>
     </main>
     </>
   );
