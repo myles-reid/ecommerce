@@ -14,13 +14,13 @@ const scrollToCatalogue = () => {
 
   return (
     <>
-    <FullHeader/>
+    {/* <FullHeader/> */}
     <main className="container">
       <HeroBanner onClick={scrollToCatalogue}/>
       <Carousel />
       <Catalogue ref={catalogueRef}/>
     </main>
-    <Footer />
+    {/* <Footer /> */}
     </>
   );
 }

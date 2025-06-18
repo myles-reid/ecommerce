@@ -235,6 +235,13 @@
     z-index: 2;
   }
 
+  .banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .banner-header {
     font-family: var(--Header-font);
   }
@@ -261,8 +268,8 @@
   }
 
   .disclaimer {
-    font-size: 12px;
-    font-weight: 200;
+    font-size: 10px;
+    font-weight: 100;
   }
   
   button {
@@ -557,19 +564,7 @@
   padding: 3rem 1rem 1rem;
   font-family: var(--Body-font);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  position: relative;
-}
-
-body:has(.store-footer) {
-  position: relative;
-  min-height: 100vh;
-}
-
-body:has(.store-footer) .store-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
+} 
 
 .footer-top {
   display: flex;
