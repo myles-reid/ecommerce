@@ -1,5 +1,3 @@
-import React from 'react';
-
 function FilterSide({ categories, setSelectedCategory, setSearchTerm, setPriceRange }) {
   const handlePriceChange = (e) => {
     const [min, max] = e.target.value.split('-').map(Number);

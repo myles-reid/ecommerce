@@ -1,8 +1,6 @@
-import { useAPI } from './Context';
 import Counter from './Counter';
 import { useEffect, useState } from 'react';
 import { FaStar, FaStarHalf, FaRegStar } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
 
 function ProductInfo({ product }) {
   const stars = [];

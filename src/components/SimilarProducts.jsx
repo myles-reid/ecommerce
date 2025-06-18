@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useAPI } from './Context';
-import ProductCard from './ProductCard'; 
 import { Link } from 'react-router-dom';
 
 function SimilarProducts( { category, id} ) {
