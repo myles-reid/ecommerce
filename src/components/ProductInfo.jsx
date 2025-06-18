@@ -9,7 +9,6 @@ function ProductInfo({ product }) {
   const outline = [];
   const [selectedProduct, setSelectedProduct] = useState({});
   const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
-  const navigate = useNavigate();
 
   useEffect(() => {
       setSelectedProduct(product);

@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className="main-header">
     <div className="container flex flex-between center">
-      <h1 className="store-name">Urban Arc</h1>
+      <h1 className="store-name"><Link to="/">Urban Arc</Link></h1>
       <nav className="nav-links">
         <Link to="/products">Products</Link>
         <Link to="/about">About</Link>
