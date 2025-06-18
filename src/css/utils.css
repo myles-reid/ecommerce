@@ -35,3 +35,11 @@ a {
   text-decoration: none;
   color: var(--app-font-color);
 }
+
+.gold {
+  color: gold;
+}
+
+.grey {
+  color: grey;
+}
