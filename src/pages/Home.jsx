@@ -1,19 +1,27 @@
 import HeroBanner from "../components/HeroBanner";
-import ProductInfo from "../components/ProductInfo";
 import Carousel from "../components/Carousel";
-import { useState } from "react";
 import Catalogue from "../components/Catalogue";
+import Footer from "../components/Footer";
+import FullHeader from "../components/FullHeader";
+import { useRef } from "react";
 
 function Home() {
+const catalogueRef = useRef(null);
 
+const scrollToCatalogue = () => {
+  catalogueRef.current.scrollIntoView({ behavior: 'smooth' });
+}
 
   return (
+    <>
+    <FullHeader/>
     <main className="container">
-      <HeroBanner/>
-      {/* <ProductInfo productId={18} /> Replace 1 with the actual product ID you want to display */}
+      <HeroBanner onClick={scrollToCatalogue}/>
       <Carousel />
-      <Catalogue />
+      <Catalogue ref={catalogueRef}/>
     </main>
+    <Footer />
+    </>
   );
 }
 
