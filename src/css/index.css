@@ -3,27 +3,36 @@
 @import url(./root.css);
 
 .catalogue-container {
+    margin-bottom: 30px;
     display: flex;
-    gap: 20px;
+    gap: 40px;
+    height: 150dvh;
     padding: 20px;
     background-color: var(--background);
 }
 
+.catalogue-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-family: var(--Header-font);
+  margin: 20px 0;
+}
+
 .products-grid {
-    margin-left: 30px;
     display: grid;
     grid-template-columns: repeat(3, minmax(180px, 1fr));
     gap: 20px;
+    flex-grow: 1;
 }
 
 .product-card {
-    height: 300px;
+    height: 330px;
     background: #fff;
     border: 1px solid #ddd;
     padding: 10px;
     cursor: pointer;
     border-radius: 6px;
-    width: 350px;
+    width: 220px;
     text-align: center;
 }
 
@@ -367,19 +376,19 @@
   padding: 3rem 1rem 1rem;
   font-family: var(--Body-font);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  position: relative;
+  /* position: relative; */
 }
 
-body:has(.store-footer) {
-  position: relative;
+/* body:has(.store-footer) {
+  /* position: relative;
   min-height: 100vh;
-}
+} */
 
-body:has(.store-footer) .store-footer {
-  position: absolute;
+/* body:has(.store-footer) .store-footer {
+  /* position: absolute;
   bottom: 0;
   left: 0;
-}
+} */
 
 .footer-top {
   display: flex;
