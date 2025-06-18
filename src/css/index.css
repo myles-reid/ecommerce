@@ -2,6 +2,87 @@
 @import url(./utils.css);
 @import url(./root.css);
 
+/*--------RelatedProduct--------*/
+
+.related-container {
+  padding: 40px 20px;
+  background-color: #fff;
+  font-family: var(--Body-font);
+}
+
+.related-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-family: var(--Header-font);
+}
+
+.divider {
+  width: 60px;
+  margin: 0 auto 30px;
+  height: 3px;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 2px;
+}
+
+.related-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.related-card {
+  flex: 0 0 200px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  text-align: center;
+  background-color: #fff;
+  padding: 16px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.related-img {
+  height: 140px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+.related-info .product-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.related-info .product-price {
+  font-size: 14px;
+  font-weight: bold;
+  color: #111;
+}
+
+.product-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: limegreen;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 4px 6px;
+  border-radius: 2px;
+}
+
 
 /*--------Catalogue--------*/
 .catalogue-container {
