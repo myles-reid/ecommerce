@@ -13,35 +13,47 @@
   width: 250px;
   height: 350px;
   object-fit: contain;
-  background-color: white; 
+  background-color: #fff;
   position: absolute;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
 }
 
 .carousel-image-link {
+  position: absolute;
+  display: block;
   width: 250px;
   height: 350px;
-  object-fit: contain;
-  background-color: white; 
-  position: absolute;
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: transparent;
 }
 
-.carousel-button {
+.carousel-arrow {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  background-color: var(--accent-color);
-  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
   border: none;
-  border-radius: 6px;
-  font-weight: bold;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #333;
   cursor: pointer;
-  box-shadow: var(--box-shadow);
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 10;
 }
 
-.carousel-button:hover {
-  background-color: #589382;
+.carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow.left {
+  left: 10px;
+}
+
+.carousel-arrow.right {
+  right: 10px;
 }

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useAPI } from './Context';
 import { Link } from 'react-router-dom';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import '../css/carousel.css';
 
 export default function Carousel() {
@@ -23,6 +24,15 @@ export default function Carousel() {
             return [...rest, first];
         });        
     }
+
+    const handlePrev = () => {
+        setPositionIndexes((prev) => {
+        const last = prev[prev.length - 1];
+        const rest = prev.slice(0, -1);
+        return [last, ...rest];
+        });
+    };
+        
     const images = mostPopularProds.map(prod => prod.image);
     const positions = [
         'center',
@@ -40,29 +50,33 @@ export default function Carousel() {
     }
         
     return (
-    <div className="carousel-container">
-        {images.map((image, index) => (
-        <Link
-            key={index}
-            className="carousel-image-link"
-            initial="center"
-            to={`/product/${mostPopularProds[index].id}`}
-        >
-            <motion.img
-                src={image}
-                alt={`product-${index}`}
-                className="carousel-image"
-                initial="center"
-                animate={positions[positionIndexes[index]]}
-                variants={imageVariants}
-                transition={{ duration: 0.5 }}
-                />
-        </Link>
-        ))}
+        <div className="carousel-container">
+            <button className="carousel-arrow left" onClick={handlePrev}>
+                <FaChevronLeft />
+            </button>
+                    
+            {images.length === positionIndexes.length &&
+                images.map((image, index) => (
+                    <Link
+                        key={index}
+                        className="carousel-image-link"
+                        to={`/product/${mostPopularProds[index].id}`}
+                    >
+                        <motion.img
+                            src={image}
+                            alt={`product-${index}`}
+                            className="carousel-image"
+                            initial="center"
+                            animate={positions[positionIndexes[index]]}
+                            variants={imageVariants}
+                            transition={{ duration: 0.5 }}
+                            />
+                    </Link>
+            ))}
 
-        <button className="carousel-button" onClick={handleNext}>
-        Next
-        </button>
-    </div>
+            <button className="carousel-arrow right" onClick={handleNext}>
+                <FaChevronRight />
+            </button>        
+        </div>
     );
 }
