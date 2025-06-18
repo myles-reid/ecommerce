@@ -159,6 +159,7 @@
   flex: 2;
   display: flex;
   justify-content: center;
+}
   
 /************************/
 /***      Item        ***/
@@ -183,7 +184,7 @@
     font-size: 25px;
     font-weight: 600;
   }
-
+}
 
   .category {
     margin-top: -20px;
@@ -315,4 +316,3 @@ body:has(.store-footer) .store-footer {
   margin-top: 2rem;
   color: var(--text-color);
 }
-

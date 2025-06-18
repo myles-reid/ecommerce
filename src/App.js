@@ -13,6 +13,8 @@ function App() {
   return (
     <div>
       <Context>
+        <HeaderTop />
+        <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/cart" element={<Cart />} />
