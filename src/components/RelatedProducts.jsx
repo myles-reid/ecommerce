@@ -1,10 +1,10 @@
 import React from 'react';
-import { useAPI } from '../Context';
+import { useAPI } from './Context';
 import { Link } from 'react-router-dom';
 
 function RelatedProducts() {
   const { data } = useAPI();
-  const related = data.slice(0, 5); // get 5 items
+  const related = data.slice(0, 5);
 
   return (
     <div className="related-container">

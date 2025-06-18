@@ -2,6 +2,8 @@
 @import url(./utils.css);
 @import url(./root.css);
 
+
+/*--------Catalogue--------*/
 .catalogue-container {
     margin-bottom: 30px;
     display: flex;
