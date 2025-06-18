@@ -187,7 +187,7 @@ body:has(.store-footer) .store-footer {
 }
 
 .join-button {
-  background-color: var(--accent-color); /* green button */
+  background-color: var(--accent-color);
   color: white;
   border: none;
   padding: 0.4rem 1.2rem;
@@ -199,13 +199,13 @@ body:has(.store-footer) .store-footer {
 }
 
 .join-button:hover {
-  background-color: #559d8b; /* darker version of your accent */
+  background-color: #559d8b;
 }
 
 .footer-bottom {
   text-align: center;
   font-size: 0.9rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1); /* or use your text color with opacity */
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 1rem;
   margin-top: 2rem;
   color: var(--text-color);
