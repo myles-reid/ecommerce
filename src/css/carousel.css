@@ -22,8 +22,8 @@
 }
 
 .carousel-image {
-  width: 250px;
-  height: 350px;
+  width: 200px;
+  height: 250px;
   object-fit: contain;
   background-color: #fff;
   position: absolute;
@@ -35,8 +35,8 @@
 .carousel-image-link {
   position: absolute;
   display: block;
-  width: 250px;
-  height: 350px;
+  width: 200px;
+  height: 250px;
   border-radius: 10px;
   text-decoration: none;
   background-color: transparent;
