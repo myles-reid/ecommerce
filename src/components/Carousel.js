@@ -1,23 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAPI } from './Context';
 import { Link } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import '../css/carousel.css';
+const MAX_PRODS = 5;
 
 export default function Carousel() {
     const data = useAPI().data;
     const mostPopularProds = [...data]
         .sort((a, b) => b.rating.rate - a.rating.rate)
-        .slice(0, 5);
-    const [positionIndexes, setPositionIndexes] = useState([]);
-
-    useEffect(() => {
-    if (mostPopularProds.length > 0) {
-        setPositionIndexes(mostPopularProds.map((_, index) => index));
-    }
-    }, [data]);
-
+        .slice(0, MAX_PRODS);
+    const [positionIndexes, setPositionIndexes] = useState(Array.from({ length: MAX_PRODS }, (_, i) => i));
     const handleNext = () => {
         setPositionIndexes(prev => {
             const [first, ...rest] = prev;
