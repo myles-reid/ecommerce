@@ -12,10 +12,7 @@ function App() {
   return (
     <div>
       <Context>
-        <h1 style={{ textAlign: 'center' }}>Our Catalogue</h1>
-        <Catalogue />
         <Routes>
-          <Route path="/" element={<Catalogue />} />
           <Route exact path="/" element={<Home />} />
           <Route exact path="/cart" element={<Cart />} />
           <Route exact path="/product/:productId" element={<Product />} />
