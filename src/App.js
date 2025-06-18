@@ -6,22 +6,22 @@ import Cart from './pages/Cart';
 import Product from './pages/Product';
 import NotFound from './pages/NotFound';
 import Footer from './components/Footer';
-
+import Catalogue from './components/Catalogue';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <Context>
-      <HeaderTop />
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/product/:id" element={<Product />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer /> 
-    </Context>
+    <div>
+      <Context>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/cart" element={<Cart />} />
+          <Route exact path="/product/:productId" element={<Product />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer /> 
+      </Context>
+    </div>
   );
 }
 

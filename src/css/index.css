@@ -2,10 +2,79 @@
 @import url(./utils.css);
 @import url(./root.css);
 
+.catalogue-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--background);
+}
+
+.products-grid {
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    height: 300px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 350px;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+}
+
+.product-info h4 {
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.product-info p {
+    color: #444;
+}
+.sidebar {
+    width: 260px;
+    padding: 20px;
+    margin-left: 30px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f7f7f7;
+}
+
+.sidebar input, .sidebar select {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 8px;
+}
+
+.sidebar button {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 8px;
+    cursor: pointer;
+    background-color: #6AB1A0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.sidebar button:hover {
+    background-color: #558f81;
+}
+
+
 /* ===========================
           Top Header
 =========================== */
-
 .top-header {
   background: var(--secondary-color);
   padding: 0.5rem 1rem;
@@ -20,18 +89,6 @@
 
 .header-left {
   flex: 1;
-}
-
-.left-msg {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-color);
-}
-
-.header-center {
-  flex: 2;
-  display: flex;
-  justify-content: center;
 }
 
 .search-wrapper {
@@ -92,6 +149,54 @@
   padding: 2px 6px;
 }
 
+.left-msg {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.header-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  
+/************************/
+/***      Item        ***/
+/************************/
+.product-details {
+  height: 550px;
+  align-items: center;
+  background-color: var(--primary-color);
+  justify-content: center;
+  border-radius: var(--box-radius);
+  box-shadow: var(--box-shadow);
+}
+
+
+.product-sidebar {
+  width: 50%;
+  flex-direction: column;
+  gap: 10px;
+
+  h2 {
+    font-family: var(--Header-font);
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+
+  .category {
+    margin-top: -20px;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: capitalize;
+  }
+
+.product-img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
 
 /* ===========================
         Main Header 
@@ -210,3 +315,4 @@ body:has(.store-footer) .store-footer {
   margin-top: 2rem;
   color: var(--text-color);
 }
+

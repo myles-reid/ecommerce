@@ -53,8 +53,8 @@ function ProductInfo({ product }) {
   
 
   return (
-    <section className="flex product-info container">
-      <div className="sidebar flex">
+    <section className="flex product-details container">
+      <div className="product-sidebar flex">
         <h2>{selectedProduct.title}</h2>
         <p className="category">{selectedProduct.category}</p>
         <div className="rating flex">
