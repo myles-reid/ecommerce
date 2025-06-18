@@ -63,7 +63,6 @@ function ProductInfo({ product }) {
                 {star}
               </div>
             ))}
-            {/* Filled/Half stars (foreground, overlay) */}
             <div className="stars star-foreground flex">
               {stars.map(star => (
                 <div key={star.key}>

@@ -23,6 +23,7 @@ useEffect(() => {
   }, [loading, products, productId, navigate]);
 
   useEffect(()=> {
+    //Just here to ensure that the page sets to the top when loaded
     window.scrollTo(0, 0);
   }, []);
 
