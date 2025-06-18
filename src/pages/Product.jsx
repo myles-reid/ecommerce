@@ -4,6 +4,8 @@ import ProductInfo from '../components/ProductInfo';
 import { useNavigate } from 'react-router-dom';
 import { useAPI } from '../components/Context';
 import SimilarProducts from '../components/SimilarProducts';
+import FullHeader from '../components/FullHeader';
+import Footer from '../components/Footer';
 
 function Product() {
 const { productId } = useParams();
@@ -24,8 +26,12 @@ useEffect(() => {
 
   return (
     <>
-    <ProductInfo product={product} />
-    <SimilarProducts category={product.category} id={product.id}/>
+      <FullHeader/>
+      <section className="product-page">
+          <ProductInfo product={product} />
+          <SimilarProducts category={product.category} id={product.id}/>
+      </section>
+      <Footer/>
     </>
   );
 }
