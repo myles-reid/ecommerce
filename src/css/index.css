@@ -17,6 +17,10 @@
 }
 
 .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 300px;
     background: #fff;
     border: 1px solid #ddd;
@@ -41,6 +45,7 @@
 .product-info p {
     color: #444;
 }
+
 .sidebar {
     width: 260px;
     padding: 20px;
@@ -196,7 +201,7 @@
 /************************/
 /***      Item        ***/
 /************************/
-.product-info {
+.product-notes {
   height: 550px;
   align-items: center;
   background-color: var(--primary-color);
