@@ -1,6 +1,6 @@
 import bannerImage from '../img/banner-img.png';
 
-function HeroBanner() {
+function HeroBanner({ onClick }) {
   const circles = []
 
   for (let i = 0; i < 5; i++) {
@@ -21,7 +21,7 @@ function HeroBanner() {
           <p>Your favourite looks and style, on sale</p>
           <p>Enjoy up to 70% off everything in the store</p>
           <p className="disclaimer">Limited selection available. No refunds or alternatives</p>
-          <button>Shop Now</button>{/*This should ref down to the products section*/}
+          <button onClick={onClick}>Shop Now</button>{/*This should ref down to the products section*/}
         </div>
       </div>
       <img className="banner-image" src={bannerImage} alt="Banner Image" />

@@ -19,7 +19,6 @@ function App() {
           <Route exact path="/product/:productId" element={<Product />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer /> 
       </Context>
     </div>
   );
