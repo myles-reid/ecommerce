@@ -14,7 +14,7 @@
 
 .carousel-container {
   position: relative;
-  height: 400px;
+  height: 300px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -68,4 +68,52 @@
 
 .carousel-arrow.right {
   right: 10px;
+}
+
+.carousel-info {
+  width: 200px;
+  max-width: 200px;
+  margin: 0 10px;
+  color: var(--text-color);
+  text-align: left;
+}
+
+.left-info {
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right-info {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-title-h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: right;
+  margin: 0 0 6px 0;
+}
+
+.carousel-title-h5 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: right;
+  margin: 0;
+  color: #555;
+}
+
+.carousel-description {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  max-height: calc(1.2em * 4);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
