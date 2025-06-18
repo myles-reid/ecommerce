@@ -1,6 +1,8 @@
 import Counter from './Counter';
 import { useEffect, useState } from 'react';
 import { FaStar, FaStarHalf, FaRegStar } from 'react-icons/fa';
+import InnerImageZoom from 'react-inner-image-zoom';
+import 'react-inner-image-zoom/lib/styles.min.css';
 
 function ProductInfo({ product }) {
   const stars = [];
@@ -89,7 +91,12 @@ function ProductInfo({ product }) {
         </form>
       </div>
       <div className="product-image">
-        <img src={selectedProduct.image} alt={selectedProduct.title} />
+        <InnerImageZoom 
+          src={selectedProduct.image}
+          zoomType='hover'
+          zoomPreload={true}
+          zoomScale={0.5}
+        />
         <div className="secondary-images flex">
           <img src={selectedProduct.image} alt={selectedProduct.title} />
           <img src={selectedProduct.image} alt={selectedProduct.title} />
