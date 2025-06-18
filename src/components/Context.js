@@ -7,11 +7,24 @@ function Context({ children }) {
   const URL = 'https://fakestoreapi.com/products';
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    const savedCart = localStorage.getItem('cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });  
 
-   const addToCart = (item) => {
+  const addToCart = (item) => {
     setCart((prev) => [...prev, item]);
   };
+
+  const removeFromCart = (id) => {
+  setCart((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const clearCart = () => setCart([]);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
   useEffect(() => {
     axios.get(URL)
@@ -23,7 +36,7 @@ function Context({ children }) {
   }, []);
 
   return (
-    <APIContext.Provider value={{ data, loading,cart, addToCart }}>
+    <APIContext.Provider value={{ data, loading, cart, addToCart, removeFromCart, clearCart }}>
       {children}
     </APIContext.Provider>
   )

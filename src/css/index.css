@@ -1,3 +1,212 @@
 @charset "utf-8";
 @import url(./utils.css);
 @import url(./root.css);
+
+/* ===========================
+          Top Header
+=========================== */
+
+.top-header {
+  background: var(--secondary-color);
+  padding: 0.5rem 1rem;
+  font-family: var(--Body-font);
+}
+
+.top-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.left-msg {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.header-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.4rem 1rem;
+  padding-right: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 22px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+}
+
+.header-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+}
+
+.icon-button {
+  padding: 0.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.icon-button:hover {
+  transform: scale(1.1);
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+}
+
+
+/* ===========================
+        Main Header 
+=========================== */
+
+.main-header {
+  background: var(--background);
+  padding: 1rem;
+  font-family: var(--Header-font);
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.store-name {
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+/* ===========================
+        Footer
+=========================== */
+
+.store-footer {
+  margin-top: auto;
+  width: 100%;
+  min-height: 200px;
+  box-sizing: border-box;
+  background-color: var(--secondary-color);
+  color: var(--text-color);               
+  padding: 3rem 1rem 1rem;
+  font-family: var(--Body-font);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+body:has(.store-footer) {
+  position: relative;
+  min-height: 100vh;
+}
+
+body:has(.store-footer) .store-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-col h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.footer-col p {
+  margin: 0.3rem 0;
+  font-size: 1.2rem;
+}
+
+.footer-input {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: var(--box-radius);
+  padding: 0.3rem 0.75rem;
+  font-size: 0.85rem;
+  max-width: 200px;
+}
+
+.join-button {
+  background-color: var(--accent-color); /* green button */
+  color: white;
+  border: none;
+  padding: 0.4rem 1.2rem;
+  border-radius: var(--box-radius);
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.join-button:hover {
+  background-color: #559d8b; /* darker version of your accent */
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* or use your text color with opacity */
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-color);
+}

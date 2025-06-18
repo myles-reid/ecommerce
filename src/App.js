@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Product from './pages/Product';
 import NotFound from './pages/NotFound';
+import Footer from './components/Footer';
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/product/:id" element={<Product />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer /> 
     </Context>
   );
 }
