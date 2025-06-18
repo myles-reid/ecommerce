@@ -44,33 +44,37 @@ export default function Carousel() {
     }
         
     return (
-        <div className="carousel-container">
+        <div className="carousel-wrapper">
+            <h3 className="carousel-title">Our Most Popular Products</h3>
+
+            <div className="carousel-container">
             <button className="carousel-arrow left" onClick={handlePrev}>
                 <FaChevronLeft />
             </button>
-                    
+
             {images.length === positionIndexes.length &&
                 images.map((image, index) => (
-                    <Link
-                        key={index}
-                        className="carousel-image-link"
-                        to={`/product/${mostPopularProds[index].id}`}
-                    >
-                        <motion.img
-                            src={image}
-                            alt={`product-${index}`}
-                            className="carousel-image"
-                            initial="center"
-                            animate={positions[positionIndexes[index]]}
-                            variants={imageVariants}
-                            transition={{ duration: 0.5 }}
-                            />
-                    </Link>
-            ))}
+                <Link
+                    key={index}
+                    className="carousel-image-link"
+                    to={`/product/${mostPopularProds[index].id}`}
+                >
+                    <motion.img
+                    src={image}
+                    alt={`product-${index}`}
+                    className="carousel-image"
+                    initial="center"
+                    animate={positions[positionIndexes[index]]}
+                    variants={imageVariants}
+                    transition={{ duration: 0.5 }}
+                    />
+                </Link>
+                ))}
 
             <button className="carousel-arrow right" onClick={handleNext}>
                 <FaChevronRight />
-            </button>        
+            </button>
+            </div>
         </div>
     );
 }
