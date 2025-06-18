@@ -300,6 +300,7 @@
 /************************/
 .product-details {
   height: 550px;
+  margin-top: 40px;
   align-items: center;
   background-color: var(--primary-color);
   justify-content: center;
@@ -473,6 +474,7 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  margin-bottom: 40px;
 }
 
 .product-list {
@@ -516,6 +518,7 @@
   height: 100px;
   width: auto;
   object-fit: contain;
+  transition: all 0.2s ease-in-out;
 }
 
 /* ===========================
@@ -524,8 +527,10 @@
 
 .main-header {
   background: var(--background);
-  padding: 1rem;
   font-family: var(--Header-font);
+  height: 70px;
+  line-height: 70px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .main-header .container {
@@ -535,7 +540,7 @@
 }
 
 .store-name {
-  font-size: 2rem;
+  font-size: 4rem;
   color: var(--text-color);
 }
 

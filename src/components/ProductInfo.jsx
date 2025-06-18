@@ -1,15 +1,14 @@
-import { useAPI } from './Context';
 import Counter from './Counter';
 import { useEffect, useState } from 'react';
 import { FaStar, FaStarHalf, FaRegStar } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import InnerImageZoom from 'react-inner-image-zoom';
+import 'react-inner-image-zoom/lib/styles.min.css';
 
 function ProductInfo({ product }) {
   const stars = [];
   const outline = [];
   const [selectedProduct, setSelectedProduct] = useState({});
   const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
-  const navigate = useNavigate();
 
   useEffect(() => {
       setSelectedProduct(product);
@@ -64,7 +63,6 @@ function ProductInfo({ product }) {
                 {star}
               </div>
             ))}
-            {/* Filled/Half stars (foreground, overlay) */}
             <div className="stars star-foreground flex">
               {stars.map(star => (
                 <div key={star.key}>
@@ -93,7 +91,12 @@ function ProductInfo({ product }) {
         </form>
       </div>
       <div className="product-image">
-        <img src={selectedProduct.image} alt={selectedProduct.title} />
+        <InnerImageZoom 
+          src={selectedProduct.image}
+          zoomType='hover'
+          zoomPreload={true}
+          zoomScale={0.5}
+        />
         <div className="secondary-images flex">
           <img src={selectedProduct.image} alt={selectedProduct.title} />
           <img src={selectedProduct.image} alt={selectedProduct.title} />
