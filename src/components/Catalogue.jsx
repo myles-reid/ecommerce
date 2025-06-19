@@ -46,26 +46,30 @@ function Catalogue(props) {
 
     if (loading) return <p>Loading products...</p>;
     return (
-        <div className="catalogue-container" ref={props.ref}>
-            <FilterSide
-                categories={categories}
-                setSelectedCategory={setSelectedCategory}
-                setSearchTerm={setSearchTerm}
-                setPriceRange={setPriceRange}
-            />
-            <div className="products-grid">
-            {filteredProducts.slice(0, 9).map(product => (
-                <Link
-                to="/cart"
-                key={product.id}
-                style={{ textDecoration: 'none' }}
-                >
-                    <ProductCard product={product} />
-                </Link>
-            ))}
-        </div>
-    </div>
-  );
+  <>
+    <h2 className="catalogue-heading">Our Catalogue</h2>
+    <section className="catalogue-container">
+      <FilterSide
+        categories={categories}
+        setSelectedCategory={setSelectedCategory}
+        setSearchTerm={setSearchTerm}
+        setPriceRange={setPriceRange}
+      />
+
+      <div className="products-grid">
+        {filteredProducts.map(product => (
+          <Link
+            to={`/product/${product.id}`}
+            key={product.id}
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <ProductCard product={product} />
+          </Link>
+        ))}
+      </div>
+    </section>
+  </>
+);
 }
 
 export default Catalogue;
