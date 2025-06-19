@@ -205,16 +205,7 @@
   color: var(--accent-color);
 }
 
-.cart-count {
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  background: var(--accent-color);
-  color: white;
-  border-radius: 50%;
-  font-size: 0.65rem;
-  padding: 2px 6px;
-}
+
 
 .left-msg {
   font-size: 1.2rem;
@@ -246,6 +237,7 @@
   margin-bottom: 80px;
   border-radius: var(--box-radius);
   box-shadow: var(--box-shadow);
+}
   
   .extra {
     position: absolute;
@@ -335,23 +327,23 @@
     font-weight: 100;
   }
   
-  button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    border-radius: 10px;
-    background-color: var(--accent-color);
-    color: var(--background);
-    border: 1px solid var(--secondary-color);
-    box-shadow: var(--box-shadow);
-    transition: all 0.2s ease-in-out;
-    }
-
-  button:hover {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    cursor: pointer;
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: var(--accent-color);
+  color: var(--background);
+  border: 1px solid var(--secondary-color);
+  box-shadow: var(--box-shadow);
+  transition: all 0.2s ease-in-out;
   }
+
+button:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  cursor: pointer;
 }
+
 
 .banner-image{
   align-self: center;
@@ -519,14 +511,13 @@
     font-size: 25px;
     font-weight: 600;
   }
+}
 
-
-  .category {
-    margin-top: -20px;
-    font-size: 14px;
-    font-weight: 300;
-    text-transform: capitalize;
-  }
+.category {
+  margin-top: -20px;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: capitalize;
 }
 
 .star-overlay {
@@ -771,6 +762,17 @@
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.store-footer a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.store-footer a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
 .footer-top {
   display: flex;
   flex-wrap: wrap;
@@ -834,4 +836,10 @@
   padding-top: 1rem;
   margin-top: 2rem;
   color: var(--text-color);
+}
+
+.size-error {
+  color: red;
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
 }

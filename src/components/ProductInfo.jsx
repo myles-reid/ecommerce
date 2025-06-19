@@ -3,12 +3,17 @@ import { useEffect, useState } from 'react';
 import { FaStar, FaStarHalf, FaRegStar } from 'react-icons/fa';
 import InnerImageZoom from 'react-inner-image-zoom';
 import 'react-inner-image-zoom/lib/styles.min.css';
+import { useAPI } from './Context';
 
 function ProductInfo({ product }) {
   const stars = [];
   const outline = [];
   const [selectedProduct, setSelectedProduct] = useState({});
   const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+  const [count, setCount] = useState(1);
+  const { addToCart } = useAPI();
+  const [sizeError, setSizeError] = useState('');
+
 
   useEffect(() => {
       setSelectedProduct(product);
@@ -34,6 +39,23 @@ function ProductInfo({ product }) {
     const code = categoryCode.get(category) || 'oth';
     return `${code}-${productId?.toString().padStart(4, '0')}-${Math.floor(Math.random() * 1000).toString().padStart(3, '0')}`;
   }
+
+  function handleAddToCart() {
+  const selectedSize = document.querySelector('input[name="size"]:checked')?.id;
+
+  if (
+    (selectedProduct.category === "men's clothing" || selectedProduct.category === "women's clothing") &&
+    !selectedSize
+  ) {
+    setSizeError('Please select a size.');
+    return;
+  }
+
+  setSizeError('');
+  addToCart({ ...selectedProduct, quantity: count, size: selectedSize });
+  setCount(1);
+  document.querySelectorAll('input[name="size"]').forEach(input => input.checked = false);
+} 
 
   for (let i = 0; i < 5; i++) {
     outline.push(
@@ -98,20 +120,30 @@ function ProductInfo({ product }) {
             </p>
           </div>
         </div>
-        <form action="onSubmit" className="flex add-form">
+         <form
+          className="flex add-form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleAddToCart();
+          }}
+        >
           {(selectedProduct?.category === 'electronics' || selectedProduct?.category === 'jewelery') ?
            <></> :
-           <div className="sizes flex">
-              {sizes.map((size, index) => (
-                <>
-                  <input type="radio" name="size" id={size} key={index} />
-                  <label htmlFor={size} className="size-label">{size}</label>
-                </>
-              ))}
-            </div>
+           <div className="sizes-wrapper">
+              <div className="sizes flex">
+                {sizes.map((size, index) => (
+                  <div key={index}>
+                    <input type="radio" name="size" id={size} />
+                    <label htmlFor={size} className="size-label">{size}</label>
+                  </div>
+                ))}
+              </div>
+              {sizeError && <p className="size-error">{sizeError}</p>}
+            </div>  
           } 
-          <Counter />
-          {/* Add to cart button */}
+          <Counter count={count} setCount={setCount} />
+
+          <button type="submit" className="add-cart-btn">Add to Cart</button>
         </form>
       </div>
       <div className="product-image">

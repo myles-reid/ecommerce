@@ -1,3 +1,5 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <footer className="store-footer">
@@ -9,25 +11,29 @@ function Footer() {
           <button className="join-button">Join</button>
         </div>
 
-        <div className="footer-col">
+       <div className="footer-col">
           <h4>Our Service</h4>
-          <p><a href="">Furniture for Sale</a></p>
-          <p><a href="">Previously Sold</a></p>
-          <p><a href="">Sell Us Your Old Furnitures</a></p>
+          <p><Link to="/products">Browse Products</Link></p>
+          <p><Link to="/products">Previously Sold</Link></p>
+          <p><Link to="/contact">Sell Us Your Old Jewelry</Link></p>
         </div>
 
         <div className="footer-col">
           <h4>About</h4>
-          <p>Our Story</p>
-          <p>Why Urban Arc</p>
-          <p>Testimonials</p>
+          <p><Link to="/about">Our Story</Link></p>
+          <p><Link to="/about">Why Urban Arc</Link></p>
+          <p><Link to="/about">Testimonials</Link></p>
         </div>
 
         <div className="footer-col">
           <h4>Contact</h4>
-          <p>How to Find Us</p>
-          <p>T: +1 (204) 123 4567</p>
-          <p>E: info@urbanarc.com</p>
+          <p><Link to="/contact">How to Find Us</Link></p>
+          <p>
+            T: <a href="tel:+12041234567">+1 (204) 123 4567</a>
+          </p>
+          <p>
+            E: <a href="mailto:info@urbanarc.com">info@urbanarc.com</a>
+          </p>
         </div>
       </div>
 

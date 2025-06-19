@@ -12,12 +12,33 @@ function Context({ children }) {
     return savedCart ? JSON.parse(savedCart) : [];
   });  
 
-  const addToCart = (item) => {
-    setCart((prev) => [...prev, item]);
+   const addToCart = (item) => {
+    const size = item.size || 'Default';
+    const existingIndex = cart.findIndex(
+      (cartItem) => cartItem.id === item.id && cartItem.size === size
+    );
+
+    if (existingIndex !== -1) {
+      const updatedCart = [...cart];
+      updatedCart[existingIndex].quantity += item.quantity || 1;
+      setCart(updatedCart);
+    } else {
+      setCart([...cart, { ...item, size, quantity: item.quantity || 1 }]);
+    }
   };
 
-  const removeFromCart = (id) => {
-  setCart((prev) => prev.filter((item) => item.id !== id));
+   const removeFromCart = (id, size) => {
+    setCart((prevCart) =>
+      prevCart.flatMap((item) => {
+        if (item.id === id && item.size === size) {
+          if (item.quantity > 1) {
+            return [{ ...item, quantity: item.quantity - 1 }];
+          }
+          return [];
+        }
+        return [item];
+      })
+    );
   };
 
   const clearCart = () => setCart([]);
