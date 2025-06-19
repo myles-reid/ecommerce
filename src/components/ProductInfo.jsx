@@ -78,14 +78,17 @@ function ProductInfo({ product }) {
           <p className="description">{selectedProduct.description}</p>
         </div>
         <form action="onSubmit" className="flex add-form">
-          <div className="sizes flex">
-            {sizes.map((size, index) => (
-              <>
-                <input type="radio" name="size" id={size} key={index} />
-                <label htmlFor={size} className="size-label">{size}</label>
-              </>
-            ))}
-          </div>
+          {(selectedProduct.category === 'electronics' || selectedProduct.category === 'jewelery') ?
+           <></> :
+           <div className="sizes flex">
+              {sizes.map((size, index) => (
+                <>
+                  <input type="radio" name="size" id={size} key={index} />
+                  <label for={size} className="size-label">{size}</label>
+                </>
+              ))}
+            </div>
+          } 
           <Counter />
           {/* Add to cart button */}
         </form>
