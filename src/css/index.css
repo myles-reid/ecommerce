@@ -10,6 +10,8 @@
   margin-bottom: 40px;
   background-color: var(--background);
   flex-wrap: wrap;
+  border-radius: var(--box-radius);
+  box-shadow: var(--box-shadow);
 }
 
 

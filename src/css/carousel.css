@@ -2,9 +2,9 @@
   background-color: var(--background);
   text-align: center;
   padding-top: 20px;
-  /* margin-top: 40px;
-  margin-bottom: 40px; */
   width: calc(50% - 20px);
+  border-radius: var(--box-radius);
+  box-shadow: var(--box-shadow);
 }
 
 .carousel-title {
