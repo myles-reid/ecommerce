@@ -2,8 +2,9 @@
   background-color: var(--background);
   text-align: center;
   padding-top: 20px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  width: calc(50% - 20px);
+  border-radius: var(--box-radius);
+  box-shadow: var(--box-shadow);
 }
 
 .carousel-title {
@@ -23,23 +24,30 @@
 
 .carousel-image {
   width: 200px;
-  height: 250px;
+  height: 200px;
   object-fit: contain;
   background-color: #fff;
   position: absolute;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
+  transition: all 0.2s ease-in-out;
 }
+
 
 .carousel-image-link {
   position: absolute;
   display: block;
   width: 200px;
-  height: 250px;
+  height: 200px;
   border-radius: 10px;
+  margin-bottom: 40px;
   text-decoration: none;
   background-color: transparent;
+}
+
+.carousel-image:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-arrow {
@@ -72,37 +80,31 @@
 
 .carousel-info {
   width: 200px;
-  max-width: 200px;
-  margin: 0 10px;
   color: var(--text-color);
-  text-align: left;
 }
 
 .left-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
-  left: 60px;
-  top: 50%;
-  transform: translateY(-50%);
+  width: 400px;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
-.right-info {
-  position: absolute;
-  right: 60px;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
 .carousel-title-h4 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  text-align: right;
   margin: 0 0 6px 0;
 }
 
 .carousel-title-h5 {
   font-size: 1.4rem;
   font-weight: 400;
-  text-align: right;
   margin: 0;
   color: #555;
 }
