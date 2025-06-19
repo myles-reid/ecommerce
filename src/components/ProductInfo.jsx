@@ -141,9 +141,10 @@ function ProductInfo({ product }) {
               {sizeError && <p className="size-error">{sizeError}</p>}
             </div>  
           } 
-          <Counter count={count} setCount={setCount} />
-
-          <button type="submit" className="add-cart-btn">Add to Cart</button>
+          <div className="flex count-add">
+            <Counter count={count} setCount={setCount} />
+            <button type="submit" className="add-cart-btn">Add to Cart</button>
+          </div>
         </form>
       </div>
       <div className="product-image">

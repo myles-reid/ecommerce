@@ -628,6 +628,9 @@ button:hover {
   }
 }
 
+.count-add {
+  justify-content: space-around;
+}
 .product-image {
   display: flex;
   flex-direction: column;
