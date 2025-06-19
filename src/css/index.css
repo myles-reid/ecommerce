@@ -131,7 +131,7 @@
 =========================== */
 .top-header {
   background: var(--secondary-color);
-  padding: 0.5rem 1rem;
+  padding:1rem;
   font-family: var(--Body-font);
 }
 
@@ -153,11 +153,12 @@
 
 .search-input {
   width: 100%;
-  padding: 0.4rem 1rem;
+  padding: 0.3rem 1rem;
   padding-right: 30px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   border-radius: 22px;
+  font-size: 14px;
 }
 
 .search-icon {
@@ -756,19 +757,7 @@
   padding: 3rem 1rem 1rem;
   font-family: var(--Body-font);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  /* position: relative; */
 }
-
-/* body:has(.store-footer) {
-  /* position: relative;
-  min-height: 100vh;
-} */
-
-/* body:has(.store-footer) .store-footer {
-  /* position: absolute;
-  bottom: 0;
-  left: 0;
-} */
 
 .footer-top {
   display: flex;

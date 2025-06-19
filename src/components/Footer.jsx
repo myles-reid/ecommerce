@@ -11,23 +11,23 @@ function Footer() {
 
         <div className="footer-col">
           <h4>Our Service</h4>
-          <p>Furniture for Sale</p>
-          <p>Previously Sold</p>
-          <p>Sell Us Your Old Furnitures</p>
+          <p><a href="">Furniture for Sale</a></p>
+          <p><a href="">Previously Sold</a></p>
+          <p><a href="">Sell Us Your Old Furnitures</a></p>
         </div>
 
         <div className="footer-col">
           <h4>About</h4>
-          <p>Our Story</p>
-          <p>Why Urban Arc</p>
-          <p>Testimonials</p>
+          <p><a href="">Our Story</a></p>
+          <p><a href="">Why Urban Arc</a></p>
+          <p><a href="">Testimonials</a></p>
         </div>
 
         <div className="footer-col">
           <h4>Contact</h4>
-          <p>How to Find Us</p>
-          <p>T: +1 (204) 123 4567</p>
-          <p>E: info@urbanarc.com</p>
+          <p><a href="">How to Find Us</a></p>
+          <p>T: <a href="">+1 (204) 123 4567</a></p>
+          <p>E: <a href="mailto:info@urbanarc.com">info@urbanarc.com</a></p>
         </div>
       </div>
 
