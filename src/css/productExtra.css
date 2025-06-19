@@ -1,0 +1,55 @@
+.product-extras-wrapper{
+  margin-top: 80px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.react-tabs {
+  height: 50svh;
+}
+
+.react-tabs__tab-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.react-tabs__tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 80px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Tomorrow', sans-serif;
+}
+
+.react-tabs__tab-panel {
+  display: flex;
+  justify-content: center;
+}
+
+.tab-content {
+  display: flex;
+  justify-content: center;
+}
+
+.product-description {
+  gap: 60px;
+  img {
+    height: 200px;
+  }
+
+  p {
+    width: 400px;
+    font-size: 16px;
+  }
+}
+
+.additional-info>div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
