@@ -22,8 +22,7 @@ function App() {
         <FullHeader onClick={scrollToCatalogue}/>
         <Routes>
           <Route exact path="/" element={<Home />} />
-            <Route path="/" element={<Catalogue />} />
-            <Route path="/product/:id" element={<Product />} />
+          <Route path="/" element={<Catalogue />} />
           <Route exact path="/product/:productId" element={<Product />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
