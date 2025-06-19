@@ -2,9 +2,9 @@
   background-color: var(--background);
   text-align: center;
   padding-top: 20px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  width: 50%;
+  /* margin-top: 40px;
+  margin-bottom: 40px; */
+  width: calc(50% - 20px);
 }
 
 .carousel-title {
@@ -91,12 +91,12 @@
   text-align: center;
 }
 
-.right-info {
+/* .right-info {
   position: absolute;
   right: 60px;
   top: 50%;
   transform: translateY(-50%);
-}
+} */
 
 .carousel-title-h4 {
   font-size: 1.4rem;
