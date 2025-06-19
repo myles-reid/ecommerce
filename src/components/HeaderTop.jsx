@@ -16,7 +16,7 @@ function HeaderTop() {
     if (match) {
       navigate(`/product/${match.id}`);
     } else {
-      alert('No matching product found.');
+      navigate('/not-found');
     }
   };
 
