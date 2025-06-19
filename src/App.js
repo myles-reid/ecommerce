@@ -2,6 +2,7 @@ import Context from './components/Context';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Product from './pages/Product';
+import Catalogue from './components/Catalogue';
 import FullHeader from './components/FullHeader';
 import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
