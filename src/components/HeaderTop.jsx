@@ -1,9 +1,30 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaShoppingCart, FaUser, FaSearch } from 'react-icons/fa';
 import { useAPI } from './Context';
+import { useState } from 'react';
 
 function HeaderTop() {
-  const { cart } = useAPI();
+  const { cart, data } = useAPI();
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    const match = data.find(product =>
+      product.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    if (match) {
+      navigate(`/product/${match.id}`);
+    } else {
+      alert('No matching product found.');
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
 
   return (
     <div className="top-header">
@@ -14,8 +35,15 @@ function HeaderTop() {
 
         <div className="header-center">
           <div className="search-wrapper">
-            <input type="text" placeholder="Search..." className="search-input" />
-            <FaSearch className="search-icon" />
+            <input
+              type="text"
+              placeholder="Search..."
+              className="search-input"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={handleKeyPress}
+            />
+            <FaSearch className="search-icon" onClick={handleSearch} style={{ cursor: 'pointer' }} />
           </div>
         </div>
 
