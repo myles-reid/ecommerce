@@ -74,8 +74,6 @@
 
 .carousel-info {
   width: 200px;
-  /* max-width: 200px; */
-  /* margin: 0 10px; */
   color: var(--text-color);
 }
 
@@ -91,24 +89,16 @@
   text-align: center;
 }
 
-/* .right-info {
-  position: absolute;
-  right: 60px;
-  top: 50%;
-  transform: translateY(-50%);
-} */
 
 .carousel-title-h4 {
   font-size: 1.4rem;
   font-weight: 600;
-  /* text-align: right; */
   margin: 0 0 6px 0;
 }
 
 .carousel-title-h5 {
   font-size: 1.4rem;
   font-weight: 400;
-  /* text-align: right; */
   margin: 0;
   color: #555;
 }
