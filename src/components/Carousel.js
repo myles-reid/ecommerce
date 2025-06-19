@@ -59,12 +59,12 @@ export default function Carousel() {
                             <>
                                 <div className="carousel-info left-info">
                                     <h4 className="carousel-title-h4">{product.title}</h4>
-                                    <h5 className="carousel-title-h5">{product.price.toFixed(2)}</h5>
+                                    {/* <h5 className="carousel-title-h5">{product.price.toFixed(2)}</h5> */}
                                 </div>
 
-                                <div className="carousel-info right-info">
+                                {/* <div className="carousel-info right-info">
                                     <p className="carousel-description">{product.description}</p>
-                                </div>
+                                </div> */}
                             </>
                         );
                     })()

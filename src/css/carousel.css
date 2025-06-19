@@ -4,6 +4,7 @@
   padding-top: 20px;
   margin-top: 40px;
   margin-bottom: 40px;
+  width: 50%;
 }
 
 .carousel-title {
@@ -23,7 +24,7 @@
 
 .carousel-image {
   width: 200px;
-  height: 250px;
+  height: 200px;
   object-fit: contain;
   background-color: #fff;
   position: absolute;
@@ -36,8 +37,9 @@
   position: absolute;
   display: block;
   width: 200px;
-  height: 250px;
+  height: 200px;
   border-radius: 10px;
+  margin-bottom: 40px;
   text-decoration: none;
   background-color: transparent;
 }
@@ -72,17 +74,21 @@
 
 .carousel-info {
   width: 200px;
-  max-width: 200px;
-  margin: 0 10px;
+  /* max-width: 200px; */
+  /* margin: 0 10px; */
   color: var(--text-color);
-  text-align: left;
 }
 
 .left-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
-  left: 60px;
-  top: 50%;
-  transform: translateY(-50%);
+  width: 400px;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
 .right-info {
@@ -93,16 +99,16 @@
 }
 
 .carousel-title-h4 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  text-align: right;
+  /* text-align: right; */
   margin: 0 0 6px 0;
 }
 
 .carousel-title-h5 {
   font-size: 1.4rem;
   font-weight: 400;
-  text-align: right;
+  /* text-align: right; */
   margin: 0;
   color: #555;
 }
