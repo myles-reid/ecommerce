@@ -47,7 +47,7 @@ function Catalogue(props) {
     if (loading) return <p>Loading products...</p>;
     return (
   <>
-    <h2 className="catalogue-heading">Our Catalogue</h2>
+    <h2 ref={props.ref} className="catalogue-heading">Our Catalogue</h2>
     <section className="catalogue-container">
       <FilterSide
         categories={categories}

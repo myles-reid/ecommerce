@@ -2,7 +2,6 @@ import Context from './components/Context';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Product from './pages/Product';
-import Catalogue from './components/Catalogue';
 import FullHeader from './components/FullHeader';
 import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
@@ -21,8 +20,8 @@ function App() {
       <Context>
         <FullHeader onClick={scrollToCatalogue}/>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/" element={<Catalogue />} />
+          <Route exact path="/" element={<Home ref={catalogueRef} onClick={scrollToCatalogue} />} />
+          <Route path="/cart" element={<Cart />} />
           <Route exact path="/product/:productId" element={<Product />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
