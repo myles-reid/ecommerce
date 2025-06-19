@@ -22,6 +22,19 @@ function ProductInfo({ product }) {
     var inv = 1.0 / step;
     return Math.round(value * inv) / inv;
 }
+  const categoryCode = new Map([
+    ['electronics', 'elc'],
+    ['jewelery', 'jwl'],
+    ['men\'s clothing', 'mcl'],
+    ['women\'s clothing', 'wcl']
+  ])
+
+  function createSKU(product) {
+    const category = product.category.toLowerCase();
+    const productId = product.id;
+    const code = categoryCode.get(category) || 'oth';
+    return `${code}-${productId.toString().padStart(4, '0')}-${Math.floor(Math.random() * 1000).toString().padStart(3, '0')}`;
+  }
 
   for (let i = 0; i < 5; i++) {
     outline.push(
@@ -74,8 +87,17 @@ function ProductInfo({ product }) {
           <p className="rating-value">({selectedProduct.rating?.count} reviews)</p>
         </div>
         <div>
-          <p className="price">${selectedProduct.price}</p>
-          <p className="description">{selectedProduct.description}</p>
+          <p className="price">
+            {selectedProduct.price !== undefined ? selectedProduct.price.toFixed(2) : 'Loading...'}
+          </p>
+          <div className="details">
+            <p className="sku"><span>SKU: </span>{createSKU(selectedProduct)}</p>
+            <p className="product-id"><span>Product ID: </span>{selectedProduct.id}</p>
+            <p className="tags">Tags: 
+              <span className="tag"> Tag1</span>
+              <span className="tag"> Tag2</span>
+            </p>
+          </div>
         </div>
         <form action="onSubmit" className="flex add-form">
           {(selectedProduct.category === 'electronics' || selectedProduct.category === 'jewelery') ?
