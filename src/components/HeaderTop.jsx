@@ -5,6 +5,7 @@ import { useAPI } from './Context';
 function HeaderTop() {
   const { cart } = useAPI();
 
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
   return (
     <div className="top-header">
       <div className="container top-header-inner">
@@ -20,9 +21,11 @@ function HeaderTop() {
         </div>
 
         <div className="header-right">
-          <Link to="/cart" className="icon-button">
+          <Link to="/cart" className="icon-button" style={{ position: 'relative' }}>
             <FaShoppingCart />
-            {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+            {totalItems > 0 && (
+              <span className="cart-count">{totalItems}</span>
+            )}
           </Link>
           <Link to="/login" className="icon-button">
             <FaUser />
