@@ -8,7 +8,6 @@ function FilterSide({ categories, setSelectedCategory, setSearchTerm, setPriceRa
     <div className="sidebar">
   <h3>Filters</h3>
 
-  {/* Row 1: Search + Price */}
   <div className="filter-row">
     <div className="sidebar-block">
       <h4>Search</h4>
@@ -34,7 +33,6 @@ function FilterSide({ categories, setSelectedCategory, setSearchTerm, setPriceRa
     </div>
   </div>
 
-  {/* Row 2: Category Buttons */}
   <div className="sidebar-block full-width">
     <h4 className='categorydisplay'>Category</h4>
     <div className="category-buttons">
