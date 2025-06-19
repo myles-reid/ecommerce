@@ -21,7 +21,7 @@ function Home({ ref, onClick }) {
       <HeroBanner onClick={onClick}/>
       <div className="middle flex">
         <Carousel />
-        <Advertisment />
+        <Advertisment onClick={onClick}/>
       </div>
       <Catalogue ref={ref}/>
     </main>

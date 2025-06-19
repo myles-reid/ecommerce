@@ -1,7 +1,7 @@
 import {LuBadgeDollarSign} from 'react-icons/lu';
 
 
-function Advertisment() {
+function Advertisment({onClick}) {
   return (
     <div className="advertisment">
       <div className="inner-ad flex">
@@ -17,7 +17,7 @@ function Advertisment() {
           <p>Stylish picks under 30$</p>
           <p>Only while supplies last</p>
         </div>
-        <button>View Deals</button>
+        <button onClick={onClick}>View Deals</button>
       </div>
     </div>
   );
