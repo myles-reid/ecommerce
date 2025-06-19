@@ -4,7 +4,7 @@ import FilterSide from './FilterSide';
 import ProductCard from './ProductCard';
 import { Link } from 'react-router-dom';
 
-function Catalogue() {
+function Catalogue(props) {
     const { data, loading } = useAPI();
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [categories, setCategories] = useState([]);

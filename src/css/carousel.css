@@ -1,47 +1,119 @@
+.carousel-wrapper {
+  background-color: var(--background);
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.carousel-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
 .carousel-container {
   position: relative;
-  height: 400px;
+  height: 300px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--background);
-  margin: 40px auto;
 }
 
 .carousel-image {
-  width: 250px;
-  height: 350px;
+  width: 200px;
+  height: 250px;
   object-fit: contain;
-  background-color: white; 
+  background-color: #fff;
   position: absolute;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
 }
 
 .carousel-image-link {
-  width: 250px;
-  height: 350px;
-  object-fit: contain;
-  background-color: white; 
   position: absolute;
+  display: block;
+  width: 200px;
+  height: 250px;
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: transparent;
 }
 
-.carousel-button {
+.carousel-arrow {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  background-color: var(--accent-color);
-  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
   border: none;
-  border-radius: 6px;
-  font-weight: bold;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #333;
   cursor: pointer;
-  box-shadow: var(--box-shadow);
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 10;
 }
 
-.carousel-button:hover {
-  background-color: #589382;
+.carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow.left {
+  left: 10px;
+}
+
+.carousel-arrow.right {
+  right: 10px;
+}
+
+.carousel-info {
+  width: 200px;
+  max-width: 200px;
+  margin: 0 10px;
+  color: var(--text-color);
+  text-align: left;
+}
+
+.left-info {
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right-info {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-title-h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: right;
+  margin: 0 0 6px 0;
+}
+
+.carousel-title-h5 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: right;
+  margin: 0;
+  color: #555;
+}
+
+.carousel-description {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  max-height: calc(1.2em * 4);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }

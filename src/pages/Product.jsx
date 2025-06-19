@@ -22,10 +22,17 @@ useEffect(() => {
       }
   }, [loading, products, productId, navigate]);
 
+  useEffect(()=> {
+    //Just here to ensure that the page sets to the top when loaded
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-    <ProductInfo product={product} />
-    <SimilarProducts category={product.category} id={product.id}/>
+      <section className="product-page">
+          <ProductInfo product={product} />
+          <SimilarProducts category={product.category} id={product.id}/>
+      </section>
     </>
   );
 }
