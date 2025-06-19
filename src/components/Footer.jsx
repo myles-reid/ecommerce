@@ -18,16 +18,16 @@ function Footer() {
 
         <div className="footer-col">
           <h4>About</h4>
-          <p><a href="">Our Story</a></p>
-          <p><a href="">Why Urban Arc</a></p>
-          <p><a href="">Testimonials</a></p>
+          <p>Our Story</p>
+          <p>Why Urban Arc</p>
+          <p>Testimonials</p>
         </div>
 
         <div className="footer-col">
           <h4>Contact</h4>
-          <p><a href="">How to Find Us</a></p>
-          <p>T: <a href="">+1 (204) 123 4567</a></p>
-          <p>E: <a href="mailto:info@urbanarc.com">info@urbanarc.com</a></p>
+          <p>How to Find Us</p>
+          <p>T: +1 (204) 123 4567</p>
+          <p>E: info@urbanarc.com</p>
         </div>
       </div>
 
