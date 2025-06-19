@@ -86,13 +86,13 @@
 
 /*--------Catalogue--------*/
 .catalogue-container {
-    margin-bottom: 30px;
-    display: flex;
-    gap: 40px;
-    height: 150dvh;
-    padding: 20px;
-    background-color: var(--background);
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--background);
+  flex-wrap: wrap;
 }
+
 
 .catalogue-heading {
   text-align: center;
@@ -102,22 +102,25 @@
 }
 
 .products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(180px, 1fr));
-    gap: 20px;
-    flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
 }
 
 .product-card {
-    height: 330px;
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 6px;
-    width: 220px;
-    text-align: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
 }
+
 
 .product-card img {
     width: 100%;
@@ -133,34 +136,73 @@
 .product-info p {
     color: #444;
 }
+/* Sidebar container takes full width */
 .sidebar {
-    width: 260px;
-    padding: 20px;
-    margin-left: 30px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background-color: #f7f7f7;
+  width: 100%;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.sidebar input, .sidebar select {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 8px;
+/* Flex row for search + price */
+.filter-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
+/* Each block inside the row */
+.sidebar-block {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Full-width block for categories */
+.sidebar-block.full-width {
+  width: 100%;
+}
+
+/* Buttons container */
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.categorydisplay {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
 .sidebar button {
-    width: 100%;
-    margin-bottom: 8px;
-    padding: 8px;
-    cursor: pointer;
-    background-color: #6AB1A0;
-    color: white;
-    border: none;
-    border-radius: 4px;
+  padding: 8px 12px;
+  background-color: #6AB1A0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--Body-font);
 }
 
 .sidebar button:hover {
-    background-color: #558f81;
+  background-color: #558f81;
+}
+
+/* Inputs & selects */
+.sidebar input,
+.sidebar select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: var(--Body-font);
 }
 
 
