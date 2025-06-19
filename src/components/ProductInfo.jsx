@@ -13,7 +13,6 @@ function ProductInfo({ product }) {
   useEffect(() => {
       setSelectedProduct(product);
   }, [product]);
-  
 
   const displayRating = selectedProduct?.rating ? round(selectedProduct.rating.rate, 0.5) : 0;
 
@@ -22,6 +21,19 @@ function ProductInfo({ product }) {
     var inv = 1.0 / step;
     return Math.round(value * inv) / inv;
 }
+  const categoryCode = new Map([
+    ['electronics', 'elc'],
+    ['jewelery', 'jwl'],
+    ['men\'s clothing', 'mcl'],
+    ['women\'s clothing', 'wcl']
+  ])
+
+  function createSKU(product) {
+    const category = product.category?.toLowerCase();
+    const productId = product?.id;
+    const code = categoryCode.get(category) || 'oth';
+    return `${code}-${productId?.toString().padStart(4, '0')}-${Math.floor(Math.random() * 1000).toString().padStart(3, '0')}`;
+  }
 
   for (let i = 0; i < 5; i++) {
     outline.push(
@@ -54,8 +66,8 @@ function ProductInfo({ product }) {
   return (
     <section className="flex product-details container">
       <div className="product-sidebar flex">
-        <h2>{selectedProduct.title}</h2>
-        <p className="category">{selectedProduct.category}</p>
+        <h2>{selectedProduct?.title}</h2>
+        <p className="category">{selectedProduct?.category}</p>
         <div className="rating flex">
           <div className="stars flex star-overlay">
             {outline.map(star => (
@@ -74,33 +86,45 @@ function ProductInfo({ product }) {
           <p className="rating-value">({selectedProduct.rating?.count} reviews)</p>
         </div>
         <div>
-          <p className="price">${selectedProduct.price}</p>
-          <p className="description">{selectedProduct.description}</p>
+          <p className="price">
+            {selectedProduct.price !== undefined ? selectedProduct?.price.toFixed(2) : 'Loading...'}
+          </p>
+          <div className="details">
+            <p className="sku"><strong>SKU: </strong>{createSKU(selectedProduct)}</p>
+            <p className="product-id"><strong>Product ID: </strong>{selectedProduct?.id}</p>
+            <p className="tags"><strong>Tags: </strong> 
+              <span className="tag"> Tag1</span>
+              <span className="tag"> Tag2</span>
+            </p>
+          </div>
         </div>
         <form action="onSubmit" className="flex add-form">
-          <div className="sizes flex">
-            {sizes.map((size, index) => (
-              <>
-                <input type="radio" name="size" id={size} key={index} />
-                <label htmlFor={size} className="size-label">{size}</label>
-              </>
-            ))}
-          </div>
+          {(selectedProduct?.category === 'electronics' || selectedProduct?.category === 'jewelery') ?
+           <></> :
+           <div className="sizes flex">
+              {sizes.map((size, index) => (
+                <>
+                  <input type="radio" name="size" id={size} key={index} />
+                  <label htmlFor={size} className="size-label">{size}</label>
+                </>
+              ))}
+            </div>
+          } 
           <Counter />
           {/* Add to cart button */}
         </form>
       </div>
       <div className="product-image">
         <InnerImageZoom 
-          src={selectedProduct.image}
+          src={selectedProduct?.image}
           zoomType='hover'
           zoomPreload={true}
           zoomScale={0.5}
         />
         <div className="secondary-images flex">
-          <img src={selectedProduct.image} alt={selectedProduct.title} />
-          <img src={selectedProduct.image} alt={selectedProduct.title} />
-          <img src={selectedProduct.image} alt={selectedProduct.title} />
+          <img src={selectedProduct?.image} alt={selectedProduct?.title} />
+          <img src={selectedProduct?.image} alt={selectedProduct?.title} />
+          <img src={selectedProduct?.image} alt={selectedProduct?.title} />
         </div>
       </div>
     </section>

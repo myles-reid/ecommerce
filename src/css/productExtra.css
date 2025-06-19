@@ -1,0 +1,155 @@
+.product-extras-wrapper{
+  margin-top: 80px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.react-tabs {
+  height: fit-content;
+  min-height: 400px;
+}
+
+.react-tabs__tab-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.react-tabs__tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 80px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--Header-font);
+}
+
+.react-tabs__tab-panel {
+  display: flex;
+  justify-content: center;
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--Body-font);
+  font-weight: 400;
+}
+
+.product-description {
+  flex-direction: row;
+  gap: 60px;
+  img {
+    height: 200px;
+  }
+
+  p {
+    width: 400px;
+    font-size: 16px;
+  }
+
+  p::first-Letter {
+    text-transform: uppercase;
+  }
+}
+
+.additional-info>div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  strong {
+    font-family: var(--Header-font);
+    font-size: 18px;
+  }
+}
+.reviews-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 45%;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 15px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    font-size: 22px;
+    font-family: var(--Header-font);
+  }
+
+  p{
+    font-size: 16px;
+    font-weight: 200;
+  }
+}
+
+.review-content {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.brand-info, .shipping-delivery {
+  flex-direction: row;
+  gap: 60px;
+
+  p {
+    width: 40%;
+  }
+}
+
+.brand-info {
+
+  div {
+    height: 200px;
+    width: 200px;
+    background-color: var(--secondary-color);
+    border-radius: var(--box-radius);
+  }
+
+  div::after {
+    content:"Brand Logo";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: var(--Header-font);
+    font-weight: 800;
+    font-size: 24px;
+    border-radius: var(--box-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--secondary-color);
+  }
+}
+
+.shipping-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  p{
+    width: 100%;
+
+    strong {
+      font-family: var(--Header-font);
+      font-size: 16px;
+    }
+  }
+}

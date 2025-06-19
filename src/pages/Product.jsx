@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import ProductInfo from '../components/ProductInfo';
 import { useNavigate } from 'react-router-dom';
 import { useAPI } from '../components/Context';
+import ProductInfo from '../components/ProductInfo';
 import SimilarProducts from '../components/SimilarProducts';
+import ProductExtras from '../components/ProductExtras';
 
 function Product() {
 const { productId } = useParams();
@@ -31,6 +32,7 @@ useEffect(() => {
     <>
       <section className="product-page">
           <ProductInfo product={product} />
+          <ProductExtras product={product} />
           <SimilarProducts category={product.category} id={product.id}/>
       </section>
     </>
