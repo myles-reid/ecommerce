@@ -51,18 +51,17 @@ function ProductExtras({ product }) {
         </TabPanel>
         <TabPanel>
           <div className="brand-info container tab-content">
-            <h3>Product Brand</h3>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
               Recusandae neque consectetur voluptatum aut distinctio eos nesciunt 
               error molestias ullam minus quas labore, repellat, consequuntur 
               aliquam laboriosam architecto quis odio delectus!
             </p>
+            <div className="brand-image"></div>
           </div>
         </TabPanel>
         <TabPanel>
           <div className="shipping-delivery container tab-content">
-            <h3>Shipping & Delivery Information</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
               Doloribus, cumque! Quisquam, voluptatum. 
@@ -70,6 +69,11 @@ function ProductExtras({ product }) {
               Doloribus, cumque! Quisquam, voluptatum. 
               Doloremque, asperiores. Quod, cumque?
             </p>
+            <div className="shipping-details">
+              <p><strong>Shipping Time:</strong> 3-5 business days</p>
+              <p><strong>Delivery Time:</strong> 5-7 business days</p>
+              <p><strong>Shipping Cost:</strong> Free for orders over $50</p>
+            </div>
           </div>
         </TabPanel>
       </Tabs>
