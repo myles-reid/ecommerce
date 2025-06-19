@@ -1,19 +1,27 @@
 import HeroBanner from "../components/HeroBanner";
-import ProductInfo from "../components/ProductInfo";
 import Carousel from "../components/Carousel";
-import { useState } from "react";
 import Catalogue from "../components/Catalogue";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-function Home() {
+function Home({ ref, onClick }) {
+  const location = useLocation();
 
+  useEffect(() => {
+    if (location.state && location.state.scrollToCatalogue && ref && ref.current) {
+      onClick();
+      window.history.replaceState({}, document.title);
+    }
+  }, [location, ref])
 
   return (
+    <>
     <main className="container">
-      <HeroBanner/>
-      {/* <ProductInfo productId={18} /> Replace 1 with the actual product ID you want to display */}
+      <HeroBanner onClick={onClick}/>
       <Carousel />
-      <Catalogue />
+      <Catalogue ref={ref}/>
     </main>
+    </>
   );
 }
 

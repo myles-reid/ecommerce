@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import ProductInfo from '../components/ProductInfo';
 import { useNavigate } from 'react-router-dom';
 import { useAPI } from '../components/Context';
+import ProductInfo from '../components/ProductInfo';
 import SimilarProducts from '../components/SimilarProducts';
+import ProductExtras from '../components/ProductExtras';
 
 function Product() {
 const { productId } = useParams();
@@ -22,10 +23,18 @@ useEffect(() => {
       }
   }, [loading, products, productId, navigate]);
 
+  useEffect(()=> {
+    //Just here to ensure that the page sets to the top when loaded
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-    <ProductInfo product={product} />
-    <SimilarProducts category={product.category} id={product.id}/>
+      <section className="product-page">
+          <ProductInfo product={product} />
+          <ProductExtras product={product} />
+          <SimilarProducts category={product.category} id={product.id}/>
+      </section>
     </>
   );
 }
