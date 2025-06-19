@@ -31,7 +31,9 @@
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
+  transition: all 0.2s ease-in-out;
 }
+
 
 .carousel-image-link {
   position: absolute;
@@ -42,6 +44,10 @@
   margin-bottom: 40px;
   text-decoration: none;
   background-color: transparent;
+}
+
+.carousel-image:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-arrow {

@@ -42,6 +42,7 @@
     cursor: pointer;
     border-radius: 6px;
     text-align: center;
+    transition: all 0.2s ease-in-out;
 }
 
 
@@ -49,6 +50,16 @@
     width: 100%;
     height: 160px;
     object-fit: contain;
+    transition: all 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+
+    img {
+        transform: scale(1.02);
+    }
 }
 
 .product-info h4 {
@@ -191,6 +202,7 @@
 
 .icon-button:hover {
   transform: scale(1.1);
+  color: var(--accent-color);
 }
 
 .cart-count {
@@ -780,7 +792,14 @@
 
 .footer-col p {
   margin: 0.3rem 0;
+  width: fit-content;
   font-size: 1.2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.footer-col p:hover {
+  color: var(--accent-color);
+  cursor: pointer;
 }
 
 .footer-input {
